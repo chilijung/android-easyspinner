@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         app:entries="@array/spn_list"
         app:title="car type"
+        app:prompt="Select a car type... "
         app:spinnerMode="dialog"
         app:nothingSelectedLayout="@layout/test_nothing_select"
         app:itemLayout="@layout/test_item"

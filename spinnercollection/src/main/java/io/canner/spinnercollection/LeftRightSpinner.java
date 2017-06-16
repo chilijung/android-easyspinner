@@ -27,6 +27,7 @@ public class LeftRightSpinner extends RelativeLayout {
     private int nothingSelectedLayout;
     private int itemLayout;
     private int itemSelectedLayout;
+    private String promptText;
 
     public LeftRightSpinner(Context context ) {
         this(context, null);
@@ -46,9 +47,16 @@ public class LeftRightSpinner extends RelativeLayout {
         this.nothingSelectedLayout = arr.getResourceId(R.styleable.LeftRightSpinner_nothingSelectedLayout, R.layout.spinner_row_nothing_selected);
         this.itemLayout = arr.getResourceId(R.styleable.LeftRightSpinner_itemLayout, R.layout.spinner_item);
         this.itemSelectedLayout = arr.getResourceId(R.styleable.LeftRightSpinner_itemSelectedLayout, R.layout.spinner_item_selected);
+        CharSequence promptText = arr.getString(R.styleable.LeftRightSpinner_prompt);
 
         if (title != null) {
             this.title = title.toString();
+        }
+
+        if (promptText != null) {
+            this.promptText = promptText.toString();
+        } else {
+            this.promptText = this.title;
         }
 
         if (entriesResId != 0) {
@@ -63,14 +71,9 @@ public class LeftRightSpinner extends RelativeLayout {
         TextView titleView = new TextView(getContext());
         Spinner spinnerView = new Spinner(getContext(), spinnerMode);
 
+        setTextViewTextAppearance(titleView);
         // setup title view and add to relativelayout.
         titleView.setText(title);
-        if (Build.VERSION.SDK_INT < 23) {
-            titleView.setTextAppearance(getContext(), titleStyleResId);
-        } else {
-            titleView.setTextAppearance(titleStyleResId);
-        }
-
         RelativeLayout.LayoutParams titleLayoutParams = new RelativeLayout.LayoutParams(
                 LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT
@@ -80,7 +83,7 @@ public class LeftRightSpinner extends RelativeLayout {
         addView(titleView);
 
         // setup spinner view and add to view
-        spinnerView.setPrompt(title);
+        spinnerView.setPrompt(promptText);
         RelativeLayout.LayoutParams spinnerLayoutParams = new RelativeLayout.LayoutParams(
                 LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT
@@ -97,5 +100,13 @@ public class LeftRightSpinner extends RelativeLayout {
                 )
         );
         addView(spinnerView);
+    }
+
+    private void setTextViewTextAppearance(TextView titleView) {
+        if (Build.VERSION.SDK_INT < 23) {
+            titleView.setTextAppearance(getContext(), titleStyleResId);
+        } else {
+            titleView.setTextAppearance(titleStyleResId);
+        }
     }
 }

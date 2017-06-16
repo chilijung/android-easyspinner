@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="LeftRightSpinner">
         <attr name="title" format="string"/>
+        <attr name="prompt" format="string"/>
         <attr name="entries" format="reference"/>
         <attr name="titleTextStyle" format="reference"/>
         <attr name="spinnerMode" format="enum">
