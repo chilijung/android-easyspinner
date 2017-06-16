@@ -24,6 +24,9 @@ public class LeftRightSpinner extends RelativeLayout {
     private int entriesResId;
     private int titleStyleResId;
     private int spinnerMode;
+    private int nothingSelectedLayout;
+    private int itemLayout;
+    private int itemSelectedLayout;
 
     public LeftRightSpinner(Context context ) {
         this(context, null);
@@ -38,8 +41,11 @@ public class LeftRightSpinner extends RelativeLayout {
         TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.LeftRightSpinner);
         CharSequence title = arr.getString(R.styleable.LeftRightSpinner_title);
         int entriesResId = arr.getResourceId(R.styleable.LeftRightSpinner_entries, 0);
-        int titleStyleResId = arr.getResourceId(R.styleable.LeftRightSpinner_titleTextStyle, R.style.innerText);
-        int spinnerMode = arr.getInt(R.styleable.LeftRightSpinner_spinnerMode, 0);
+        this.titleStyleResId = arr.getResourceId(R.styleable.LeftRightSpinner_titleTextStyle, R.style.innerText);
+        this.spinnerMode = arr.getInt(R.styleable.LeftRightSpinner_spinnerMode, 0);
+        this.nothingSelectedLayout = arr.getResourceId(R.styleable.LeftRightSpinner_nothingSelectedLayout, R.layout.spinner_row_nothing_selected);
+        this.itemLayout = arr.getResourceId(R.styleable.LeftRightSpinner_itemLayout, R.layout.spinner_item);
+        this.itemSelectedLayout = arr.getResourceId(R.styleable.LeftRightSpinner_itemSelectedLayout, R.layout.spinner_item_selected);
 
         if (title != null) {
             this.title = title.toString();
@@ -48,9 +54,6 @@ public class LeftRightSpinner extends RelativeLayout {
         if (entriesResId != 0) {
             this.entriesResId = entriesResId;
         }
-
-        this.titleStyleResId = titleStyleResId;
-        this.spinnerMode = spinnerMode;
 
         arr.recycle();  // Do this when done.
         init();
@@ -84,12 +87,12 @@ public class LeftRightSpinner extends RelativeLayout {
         );
         spinnerLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         spinnerView.setLayoutParams(spinnerLayoutParams);
-        ArrayAdapter<CharSequence> spinnerArrayAdapter = ArrayAdapter.createFromResource(getContext(), entriesResId, R.layout.spinner_item_selected);
-        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        ArrayAdapter<CharSequence> spinnerArrayAdapter = ArrayAdapter.createFromResource(getContext(), entriesResId, this.itemSelectedLayout);
+        spinnerArrayAdapter.setDropDownViewResource(this.itemLayout);
         spinnerView.setAdapter(
                 new NothingSelectedSpinnerAdapter(
                         spinnerArrayAdapter,
-                        R.layout.spinner_row_nothing_selected,
+                        nothingSelectedLayout,
                         getContext()
                 )
         );

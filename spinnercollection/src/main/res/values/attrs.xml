@@ -8,5 +8,8 @@
             <enum name="dialog" value="0"/>
             <enum name="dropdown" value="1"/>
         </attr>
+        <attr name="nothingSelectedLayout" format="reference"/>
+        <attr name="itemLayout" format="reference"/>
+        <attr name="itemSelectedLayout" format="reference"/>
     </declare-styleable>
 </resources>

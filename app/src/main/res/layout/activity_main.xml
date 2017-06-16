@@ -13,6 +13,9 @@
         app:entries="@array/spn_list"
         app:title="car type"
         app:spinnerMode="dialog"
+        app:nothingSelectedLayout="@layout/test_nothing_select"
+        app:itemLayout="@layout/test_item"
+        app:itemSelectedLayout="@layout/test_item_selected"
         style="@style/spinnerForm"/>
 
 </android.support.constraint.ConstraintLayout>

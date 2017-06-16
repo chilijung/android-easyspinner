@@ -11,7 +11,6 @@
     <style name="titleStyle">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
-
     <style name="spinnerForm">
         <item name="android:paddingLeft">20dp</item>
         <item name="android:paddingRight">20dp</item>
