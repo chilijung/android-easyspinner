@@ -8,12 +8,12 @@
     android:orientation="vertical"
     tools:context="io.canner.spinnerapp.MainActivity">
 
-    <io.canner.easyspinner.LeftRightSpinner
+    <io.canner.easyspinner.HorizontalSpinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:entries="@array/spn_list"
-        app:title="car type"
+        app:title="Horizontal spinner"
         app:prompt="Select a car type... "
         app:spinnerMode="dialog"
         app:nothingSelectedLayout="@layout/test_nothing_select"
@@ -44,5 +44,18 @@
         app:entries="@array/spn_list"
         app:prompt="Select a car type... "
         app:spinnerMode="dropdown"
+        style="@style/spinnerForm"/>
+
+    <io.canner.easyspinner.VerticalSpinner
+        android:id="@+id/verticalSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:entries="@array/spn_list"
+        app:title="Vertical spinner"
+        app:prompt="Select a car type... "
+        app:spinnerMode="dialog"
+        app:nothingSelectedLayout="@layout/test_nothing_select"
+        app:itemLayout="@layout/test_item"
+        app:itemSelectedLayout="@layout/test_item_selected"
         style="@style/spinnerForm"/>
 </LinearLayout>

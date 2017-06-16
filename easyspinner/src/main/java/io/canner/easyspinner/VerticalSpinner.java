@@ -10,16 +10,16 @@ import android.widget.TextView;
  * Created by lijung on 6/16/17.
  */
 
-public class LeftRightSpinner extends SpinnerLayout {
-    public LeftRightSpinner(Context context ) {
+public class VerticalSpinner extends SpinnerLayout {
+    public VerticalSpinner(Context context ) {
         this(context, null);
     }
 
-    public LeftRightSpinner(Context context, AttributeSet attrs) {
+    public VerticalSpinner(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public LeftRightSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
+    public VerticalSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -30,21 +30,21 @@ public class LeftRightSpinner extends SpinnerLayout {
         setTextViewTextAppearance(titleView, titleStyleResId);
         // setup title view and add to relativelayout.
         titleView.setText(title);
+        titleView.setId(R.id.title);
         RelativeLayout.LayoutParams titleLayoutParams = new RelativeLayout.LayoutParams(
                 LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT
         );
-        titleLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
         titleView.setLayoutParams(titleLayoutParams);
         addView(titleView);
 
         // setup spinner view and add to view
         spinnerView.setPrompt(promptText);
         RelativeLayout.LayoutParams spinnerLayoutParams = new RelativeLayout.LayoutParams(
-                LayoutParams.WRAP_CONTENT,
+                LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT
         );
-        spinnerLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        spinnerLayoutParams.addRule(RelativeLayout.BELOW, R.id.title);
         spinnerView.setLayoutParams(spinnerLayoutParams);
         spinnerView.setAdapter(this.spinnerViewAdapter);
 

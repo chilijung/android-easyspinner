@@ -8,17 +8,17 @@ import android.widget.AdapterView;
 
 import java.util.ArrayList;
 
-import io.canner.easyspinner.LeftRightSpinner;
+import io.canner.easyspinner.HorizontalSpinner;
 
 public class MainActivity extends AppCompatActivity {
-    private LeftRightSpinner spinnerTest;
+    private HorizontalSpinner spinnerTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.spinnerTest = (LeftRightSpinner) findViewById(R.id.spinner1);
+        this.spinnerTest = (HorizontalSpinner) findViewById(R.id.spinner1);
         spinnerTest.setOnItemSelectedListener((new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
