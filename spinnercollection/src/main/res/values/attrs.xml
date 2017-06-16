@@ -3,5 +3,10 @@
     <declare-styleable name="LeftRightSpinner">
         <attr name="title" format="string"/>
         <attr name="entries" format="reference"/>
+        <attr name="titleTextStyle" format="reference"/>
+        <attr name="spinnerMode" format="enum">
+            <enum name="dialog" value="0"/>
+            <enum name="dropdown" value="1"/>
+        </attr>
     </declare-styleable>
 </resources>
