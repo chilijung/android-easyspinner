@@ -5,4 +5,4 @@
     style="@style/innerText"
     android:textColor="@color/gray"
     android:maxLines="1"
-    android:text="未選擇" />
+    android:text="Please select..." />

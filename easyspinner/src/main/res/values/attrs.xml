@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="LeftRightSpinner">
+    <declare-styleable name="EasySpinner">
         <attr name="title" format="string"/>
         <attr name="prompt" format="string"/>
         <attr name="entries" format="reference"/>
