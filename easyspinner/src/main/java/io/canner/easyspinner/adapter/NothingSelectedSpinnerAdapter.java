@@ -30,10 +30,7 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
      * you want text grayed out like a prompt...
      * @param context
      */
-    public NothingSelectedSpinnerAdapter(
-            SpinnerAdapter spinnerAdapter,
-            int nothingSelectedLayout, Context context) {
-
+    public NothingSelectedSpinnerAdapter(SpinnerAdapter spinnerAdapter, int nothingSelectedLayout, Context context) {
         this(spinnerAdapter, nothingSelectedLayout, -1, context);
     }
 

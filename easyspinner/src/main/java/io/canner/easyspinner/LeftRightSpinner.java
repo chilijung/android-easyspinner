@@ -2,7 +2,6 @@ package io.canner.easyspinner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
@@ -15,7 +14,7 @@ import io.canner.easyspinner.adapter.NothingSelectedSpinnerAdapter;
  * Created by lijung on 6/16/17.
  */
 
-public class LeftRightSpinner extends RelativeLayout {
+public class LeftRightSpinner extends SpinnerLayout {
     private String title = "";
     private int entriesResId;
     private int titleStyleResId;
@@ -66,8 +65,8 @@ public class LeftRightSpinner extends RelativeLayout {
     private void init() {
         TextView titleView = new TextView(getContext());
         Spinner spinnerView = new Spinner(getContext(), spinnerMode);
-
-        setTextViewTextAppearance(titleView);
+        this.spinnerView = spinnerView;
+        setTextViewTextAppearance(titleView, titleStyleResId);
         // setup title view and add to relativelayout.
         titleView.setText(title);
         RelativeLayout.LayoutParams titleLayoutParams = new RelativeLayout.LayoutParams(
@@ -96,13 +95,5 @@ public class LeftRightSpinner extends RelativeLayout {
                 )
         );
         addView(spinnerView);
-    }
-
-    private void setTextViewTextAppearance(TextView titleView) {
-        if (Build.VERSION.SDK_INT < 23) {
-            titleView.setTextAppearance(getContext(), titleStyleResId);
-        } else {
-            titleView.setTextAppearance(titleStyleResId);
-        }
     }
 }
