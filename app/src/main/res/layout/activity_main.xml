@@ -36,4 +36,13 @@
         android:layout_height="wrap_content"
         android:text="add collection data"
         android:onClick="addCollection"/>
+
+    <io.canner.easyspinner.SimpleSpinner
+        android:id="@+id/simpleSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:entries="@array/spn_list"
+        app:prompt="Select a car type... "
+        app:spinnerMode="dropdown"
+        style="@style/spinnerForm"/>
 </LinearLayout>

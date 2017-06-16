@@ -2,12 +2,9 @@ package io.canner.easyspinner;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import io.canner.easyspinner.adapter.NothingSelectedSpinnerAdapter;
 
 /**
  * Created by lijung on 6/16/17.
