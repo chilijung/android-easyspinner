@@ -5,6 +5,7 @@ import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.SpinnerAdapter;
 
@@ -16,7 +17,7 @@ import android.widget.SpinnerAdapter;
 public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapter {
 
     protected static final int EXTRA = 1;
-    protected SpinnerAdapter adapter;
+    protected ArrayAdapter adapter;
     protected Context context;
     protected int nothingSelectedLayout;
     protected int nothingSelectedDropdownLayout;
@@ -30,7 +31,7 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
      * you want text grayed out like a prompt...
      * @param context
      */
-    public NothingSelectedSpinnerAdapter(SpinnerAdapter spinnerAdapter, int nothingSelectedLayout, Context context) {
+    public NothingSelectedSpinnerAdapter(ArrayAdapter spinnerAdapter, int nothingSelectedLayout, Context context) {
         this(spinnerAdapter, nothingSelectedLayout, -1, context);
     }
 
@@ -46,7 +47,7 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
      * the dropdown.
      * @param context
      */
-    public NothingSelectedSpinnerAdapter(SpinnerAdapter spinnerAdapter, int nothingSelectedLayout, int nothingSelectedDropdownLayout, Context context) {
+    public NothingSelectedSpinnerAdapter(ArrayAdapter spinnerAdapter, int nothingSelectedLayout, int nothingSelectedDropdownLayout, Context context) {
         this.adapter = spinnerAdapter;
         this.context = context;
         this.nothingSelectedLayout = nothingSelectedLayout;
@@ -156,4 +157,7 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
         // item to be picked.
     }
 
+    public ArrayAdapter getAdapter() {
+        return adapter;
+    }
 }

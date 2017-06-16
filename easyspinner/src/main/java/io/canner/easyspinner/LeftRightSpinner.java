@@ -8,6 +8,10 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 import io.canner.easyspinner.adapter.NothingSelectedSpinnerAdapter;
 
 /**
@@ -16,7 +20,7 @@ import io.canner.easyspinner.adapter.NothingSelectedSpinnerAdapter;
 
 public class LeftRightSpinner extends SpinnerLayout {
     private String title = "";
-    private int entriesResId;
+    private List<String> entries;
     private int titleStyleResId;
     private int spinnerMode;
     private int nothingSelectedLayout;
@@ -55,7 +59,7 @@ public class LeftRightSpinner extends SpinnerLayout {
         }
 
         if (entriesResId != 0) {
-            this.entriesResId = entriesResId;
+            this.entries = Arrays.asList(getResources().getStringArray(entriesResId));
         }
 
         arr.recycle();  // Do this when done.
@@ -85,15 +89,38 @@ public class LeftRightSpinner extends SpinnerLayout {
         );
         spinnerLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         spinnerView.setLayoutParams(spinnerLayoutParams);
-        ArrayAdapter<CharSequence> spinnerArrayAdapter = ArrayAdapter.createFromResource(getContext(), entriesResId, this.itemSelectedLayout);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter(getContext(), this.itemSelectedLayout);
         spinnerArrayAdapter.setDropDownViewResource(this.itemLayout);
-        spinnerView.setAdapter(
-                new NothingSelectedSpinnerAdapter(
-                        spinnerArrayAdapter,
-                        nothingSelectedLayout,
-                        getContext()
-                )
-        );
+        spinnerArrayAdapter.addAll(entries);
+        this.spinnerViewAdapter = new NothingSelectedSpinnerAdapter(spinnerArrayAdapter, nothingSelectedLayout, getContext());
+        spinnerView.setAdapter(this.spinnerViewAdapter);
+
         addView(spinnerView);
+    }
+
+    public ArrayAdapter getAdapter() {
+        return spinnerViewAdapter.getAdapter();
+    }
+
+    public void clear() {
+        getAdapter().clear();
+    }
+
+    public void add(String datum) {
+        getAdapter().add(datum);
+    }
+
+    public void addAll(Collection data) {
+        getAdapter().addAll(data);
+    }
+
+    public void resetData(String datum) {
+        clear();
+        add(datum);
+    }
+
+    public void resetData(Collection data) {
+        clear();
+        addAll(data);
     }
 }

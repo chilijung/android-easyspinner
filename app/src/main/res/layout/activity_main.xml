@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="io.canner.spinnerapp.MainActivity">
 
     <io.canner.easyspinner.LeftRightSpinner
@@ -19,5 +20,20 @@
         app:itemLayout="@layout/test_item"
         app:itemSelectedLayout="@layout/test_item_selected"
         style="@style/spinnerForm"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear spinner"
+        android:onClick="clear"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add a dataset"
+        android:onClick="addData"/>
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add collection data"
+        android:onClick="addCollection"/>
+</LinearLayout>
