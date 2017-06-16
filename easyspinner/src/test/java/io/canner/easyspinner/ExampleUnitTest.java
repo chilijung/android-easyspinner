@@ -1,4 +1,4 @@
-package io.canner.spinnercollection;
+package io.canner.easyspinner;
 
 import org.junit.Test;
 

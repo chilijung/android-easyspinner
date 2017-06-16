@@ -1,19 +1,15 @@
-package io.canner.spinnercollection;
+package io.canner.easyspinner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import io.canner.spinnercollection.adapter.NothingSelectedSpinnerAdapter;
+import io.canner.easyspinner.adapter.NothingSelectedSpinnerAdapter;
 
 /**
  * Created by lijung on 6/16/17.
@@ -39,15 +35,15 @@ public class LeftRightSpinner extends RelativeLayout {
 
     public LeftRightSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.LeftRightSpinner);
-        CharSequence title = arr.getString(R.styleable.LeftRightSpinner_title);
-        int entriesResId = arr.getResourceId(R.styleable.LeftRightSpinner_entries, 0);
-        this.titleStyleResId = arr.getResourceId(R.styleable.LeftRightSpinner_titleTextStyle, R.style.innerText);
-        this.spinnerMode = arr.getInt(R.styleable.LeftRightSpinner_spinnerMode, 0);
-        this.nothingSelectedLayout = arr.getResourceId(R.styleable.LeftRightSpinner_nothingSelectedLayout, R.layout.spinner_row_nothing_selected);
-        this.itemLayout = arr.getResourceId(R.styleable.LeftRightSpinner_itemLayout, R.layout.spinner_item);
-        this.itemSelectedLayout = arr.getResourceId(R.styleable.LeftRightSpinner_itemSelectedLayout, R.layout.spinner_item_selected);
-        CharSequence promptText = arr.getString(R.styleable.LeftRightSpinner_prompt);
+        TypedArray arr = context.obtainStyledAttributes(attrs, io.canner.easyspinner.R.styleable.LeftRightSpinner);
+        CharSequence title = arr.getString(io.canner.easyspinner.R.styleable.LeftRightSpinner_title);
+        int entriesResId = arr.getResourceId(io.canner.easyspinner.R.styleable.LeftRightSpinner_entries, 0);
+        this.titleStyleResId = arr.getResourceId(io.canner.easyspinner.R.styleable.LeftRightSpinner_titleTextStyle, io.canner.easyspinner.R.style.innerText);
+        this.spinnerMode = arr.getInt(io.canner.easyspinner.R.styleable.LeftRightSpinner_spinnerMode, 0);
+        this.nothingSelectedLayout = arr.getResourceId(io.canner.easyspinner.R.styleable.LeftRightSpinner_nothingSelectedLayout, io.canner.easyspinner.R.layout.spinner_row_nothing_selected);
+        this.itemLayout = arr.getResourceId(io.canner.easyspinner.R.styleable.LeftRightSpinner_itemLayout, io.canner.easyspinner.R.layout.spinner_item);
+        this.itemSelectedLayout = arr.getResourceId(io.canner.easyspinner.R.styleable.LeftRightSpinner_itemSelectedLayout, io.canner.easyspinner.R.layout.spinner_item_selected);
+        CharSequence promptText = arr.getString(io.canner.easyspinner.R.styleable.LeftRightSpinner_prompt);
 
         if (title != null) {
             this.title = title.toString();

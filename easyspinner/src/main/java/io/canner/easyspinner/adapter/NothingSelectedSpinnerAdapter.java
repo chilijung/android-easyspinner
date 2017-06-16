@@ -1,4 +1,4 @@
-package io.canner.spinnercollection.adapter;
+package io.canner.easyspinner.adapter;
 
 import android.content.Context;
 import android.database.DataSetObserver;

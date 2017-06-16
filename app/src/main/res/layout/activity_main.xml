@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="io.canner.spinnerapp.MainActivity">
 
-    <io.canner.spinnercollection.LeftRightSpinner
+    <io.canner.easyspinner.LeftRightSpinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:entries="@array/spn_list"

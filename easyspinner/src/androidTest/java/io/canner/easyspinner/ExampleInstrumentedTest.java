@@ -1,4 +1,4 @@
-package io.canner.spinnercollection;
+package io.canner.easyspinner;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("io.canner.spinnercollection.test", appContext.getPackageName());
+        assertEquals("io.canner.easyspinner.test", appContext.getPackageName());
     }
 }
