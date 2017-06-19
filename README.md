@@ -29,9 +29,9 @@ dependencies {
 - [Vertical Spinner](#verticalspinner)
 - [Normal Spinner](#normalspinner)
 
-#### Horizonal spinner
+#### Horizontal spinner
 
-<img src="./preview/horizonal.png" width="250"/>
+<img src="./preview/horizontal.png" width="250"/>
 
 ```xml
 <io.canner.easyspinner.HorizontalSpinner
