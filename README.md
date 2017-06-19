@@ -1,14 +1,11 @@
 # EasySpinner
-[![Release](https://jitpack.io/v/canner/android-easyspinner.svg)](https://jitpack.io/#canner/android-easyspinner)
+[![Release](https://jitpack.io/v/Canner/android-easyspinner.svg)](https://jitpack.io/#Canner/android-easyspinner)
 
 Styling and manipulating data in android spinner is hard. Make it easy.
 
 ## Demo
 
 <img src="./preview/demo.png" width="250"/>
-
-## Install
-
 
 ## Install
 
