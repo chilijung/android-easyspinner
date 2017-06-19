@@ -184,6 +184,10 @@ set title.
 
 set spinner prompt.
 
+#### spinner.setEnabled(boolean enabled)
+
+set spinner enabled or not.
+
 ## License
 
 MIT

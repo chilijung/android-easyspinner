@@ -117,4 +117,13 @@ abstract public class SpinnerLayout extends RelativeLayout {
         spinnerView.setPrompt(prompt);
     }
 
+    public void setEnabled(boolean enabled) {
+        spinnerView.setEnabled(enabled);
+
+        if (enabled) {
+            spinnerView.setAlpha(1);
+        } else {
+            spinnerView.setAlpha(0.5f);
+        }
+    }
 }
