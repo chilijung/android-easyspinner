@@ -1,5 +1,5 @@
 # EasySpinner
-[![Release](https://jitpack.io/v/canner/android-easyspinner.svg)](https://jitpack.io/#canner/easyspinner)
+[![Release](https://jitpack.io/v/canner/android-easyspinner.svg)](https://jitpack.io/#canner/android-easyspinner)
 
 Styling and manipulating data in android spinner is hard. Make it easy.
 
