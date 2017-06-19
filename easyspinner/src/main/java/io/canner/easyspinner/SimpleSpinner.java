@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 /**
  * Created by lijung on 6/16/17.
@@ -24,8 +23,7 @@ public class SimpleSpinner extends SpinnerLayout {
     }
 
     protected void init() {
-        Spinner spinnerView = new Spinner(getContext(), spinnerMode);
-        this.spinnerView = spinnerView;
+        spinnerView = new Spinner(getContext(), spinnerMode);
 
         // setup spinner view and add to view
         spinnerView.setPrompt(promptText);
@@ -39,5 +37,6 @@ public class SimpleSpinner extends SpinnerLayout {
         addView(spinnerView);
     }
 
+    // simple spinner don't have title
     public void setTitle(String title) {}
 }

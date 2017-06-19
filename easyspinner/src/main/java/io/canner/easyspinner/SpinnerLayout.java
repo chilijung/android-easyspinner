@@ -113,4 +113,8 @@ abstract public class SpinnerLayout extends RelativeLayout {
         addAll(data);
     }
 
+    public void setPrompt(String prompt) {
+        spinnerView.setPrompt(prompt);
+    }
+
 }

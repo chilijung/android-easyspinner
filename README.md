@@ -180,6 +180,10 @@ reset data and set collection to `app:entries`.
 
 set title.
 
+#### spinner.setPrompt(String prompt)
+
+set spinner prompt.
+
 ## License
 
 MIT

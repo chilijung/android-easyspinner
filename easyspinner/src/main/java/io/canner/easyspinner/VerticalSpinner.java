@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 /**
  * Created by lijung on 6/16/17.
@@ -24,9 +23,7 @@ public class VerticalSpinner extends SpinnerLayout {
     }
 
     protected void init() {
-        TextView titleView = new TextView(getContext());
-        Spinner spinnerView = new Spinner(getContext(), spinnerMode);
-        this.spinnerView = spinnerView;
+        spinnerView = new Spinner(getContext(), spinnerMode);
         setTextViewTextAppearance(titleView, titleStyleResId);
         // setup title view and add to relativelayout.
         titleView.setText(title);
