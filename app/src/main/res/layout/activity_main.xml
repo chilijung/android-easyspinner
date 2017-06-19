@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,52 +9,54 @@
 
     <io.canner.easyspinner.HorizontalSpinner
         android:id="@+id/spinner1"
+        style="@style/spinnerForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:entries="@array/spn_list"
-        app:title="Horizontal spinner"
-        app:prompt="Select a car type... "
-        app:spinnerMode="dialog"
-        app:nothingSelectedLayout="@layout/test_nothing_select"
         app:itemLayout="@layout/test_item"
         app:itemSelectedLayout="@layout/test_item_selected"
-        style="@style/spinnerForm"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="clear spinner"
-        android:onClick="clear"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add a dataset"
-        android:onClick="addData"/>
+        app:nothingSelectedLayout="@layout/test_nothing_select"
+        app:prompt="Select a car type... "
+        app:spinnerMode="dialog"
+        app:title="Horizontal spinner" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add collection data"
-        android:onClick="addCollection"/>
+        android:onClick="clear"
+        android:text="clear spinner" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addData"
+        android:text="add a dataset" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addCollection"
+        android:text="add collection data" />
 
     <io.canner.easyspinner.SimpleSpinner
         android:id="@+id/simpleSpinner"
+        style="@style/spinnerForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:entries="@array/spn_list"
         app:prompt="Select a car type... "
-        app:spinnerMode="dropdown"
-        style="@style/spinnerForm"/>
+        app:spinnerMode="dropdown" />
 
     <io.canner.easyspinner.VerticalSpinner
         android:id="@+id/verticalSpinner"
+        style="@style/spinnerForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:entries="@array/spn_list"
-        app:title="Vertical spinner"
-        app:prompt="Select a car type... "
-        app:spinnerMode="dialog"
-        app:nothingSelectedLayout="@layout/test_nothing_select"
         app:itemLayout="@layout/test_item"
         app:itemSelectedLayout="@layout/test_item_selected"
-        style="@style/spinnerForm"/>
+        app:nothingSelectedLayout="@layout/test_nothing_select"
+        app:prompt="Select a car type... "
+        app:spinnerMode="dialog"
+        app:title="Vertical spinner" />
 </LinearLayout>
