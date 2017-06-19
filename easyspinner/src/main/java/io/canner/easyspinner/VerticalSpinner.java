@@ -50,4 +50,8 @@ public class VerticalSpinner extends SpinnerLayout {
 
         addView(spinnerView);
     }
+
+    public void setTitle(String title) {
+        titleView.setText(title);
+    }
 }

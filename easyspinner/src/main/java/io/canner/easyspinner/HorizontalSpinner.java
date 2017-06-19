@@ -24,7 +24,7 @@ public class HorizontalSpinner extends SpinnerLayout {
     }
 
     protected void init() {
-        TextView titleView = new TextView(getContext());
+
         Spinner spinnerView = new Spinner(getContext(), spinnerMode);
         this.spinnerView = spinnerView;
         setTextViewTextAppearance(titleView, titleStyleResId);
@@ -49,5 +49,9 @@ public class HorizontalSpinner extends SpinnerLayout {
         spinnerView.setAdapter(this.spinnerViewAdapter);
 
         addView(spinnerView);
+    }
+
+    public void setTitle(String title) {
+        titleView.setText(title);
     }
 }

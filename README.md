@@ -142,21 +142,21 @@ spinnerTest.setOnItemSelectedListener((new AdapterView.OnItemSelectedListener() 
 }));
 ```
 
-## clear entries
-
 #### spinner.clear();
 
-## add new entry
+clear entries in spinner.
 
-#### spinner.add(String)
+###### spinner.add(String)
+
+add a data in entry.
 
 ```java
 spinnerTest.add("test data");
 ```
 
-## add new entries
+#### spinner.addAll(Collection)
 
-#### spinner.addCollection(Collection)
+add collection to entries
 
 ```java
 ArrayList<String> testData = new ArrayList();
@@ -167,6 +167,18 @@ testData.add("test 4");
 
 spinnerTest.addAll(testData);
 ```
+
+#### spinner.resetData(String datum)
+
+reset data and set datum to `app:entries`.
+
+#### spinner.resetData(Collection data)
+
+reset data and set collection to `app:entries`.
+
+#### spinner.setTitle(String title)
+
+set title.
 
 ## License
 

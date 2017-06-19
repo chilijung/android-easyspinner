@@ -31,6 +31,7 @@ abstract public class SpinnerLayout extends RelativeLayout {
     protected int itemLayout;
     protected int itemSelectedLayout;
     protected String promptText;
+    protected TextView titleView = new TextView(getContext());
 
     public SpinnerLayout(Context context, AttributeSet attrs, int defStyleArr) {
         super(context, attrs, defStyleArr);
@@ -72,6 +73,7 @@ abstract public class SpinnerLayout extends RelativeLayout {
 
     // have to do init methods (initial views)
     abstract protected void init();
+    abstract public void setTitle(String title);
 
     protected void setTextViewTextAppearance(TextView titleView, int titleStyleResId) {
         if (Build.VERSION.SDK_INT < 23) {

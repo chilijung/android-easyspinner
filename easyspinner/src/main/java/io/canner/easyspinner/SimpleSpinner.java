@@ -38,4 +38,6 @@ public class SimpleSpinner extends SpinnerLayout {
 
         addView(spinnerView);
     }
+
+    public void setTitle(String title) {}
 }
