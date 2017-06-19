@@ -1,10 +1,30 @@
 # EasySpinner
+[![Release](https://jitpack.io/v/canner/android-easyspinner.svg)](https://jitpack.io/#canner/easyspinner)
 
 Styling and manipulating data in android spinner is hard. Make it easy.
 
 ## Demo
 
 <img src="./preview/demo.png" width="250"/>
+
+## Install
+
+
+## Install
+
+add your `build.grade`:
+
+```groovy
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+dependencies {
+    compile 'com.github.canner:android-easyspinner:<VERSION>'
+}
+```
 
 ## Demo Spinner types
 
