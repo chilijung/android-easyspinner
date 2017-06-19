@@ -146,7 +146,7 @@ spinnerTest.setOnItemSelectedListener((new AdapterView.OnItemSelectedListener() 
 
 clear entries in spinner.
 
-###### spinner.add(String)
+##### spinner.add(String)
 
 add a data in entry.
 
