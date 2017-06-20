@@ -71,6 +71,14 @@ abstract public class SpinnerLayout extends RelativeLayout {
         this.spinnerViewAdapter = new NothingSelectedSpinnerAdapter(spinnerArrayAdapter, nothingSelectedLayout, getContext());
     }
 
+    public Spinner getSpinnerView() {
+        return spinnerView;
+    }
+
+    public TextView getTitleView() {
+        return titleView;
+    }
+
     // have to do init methods (initial views)
     abstract protected void init();
     abstract public void setTitle(String title);
@@ -125,5 +133,9 @@ abstract public class SpinnerLayout extends RelativeLayout {
         } else {
             spinnerView.setAlpha(0.5f);
         }
+    }
+
+    public void setSelection(int pos) {
+        spinnerView.setSelection(pos);
     }
 }

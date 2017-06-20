@@ -188,6 +188,18 @@ set spinner prompt.
 
 set spinner enabled or not.
 
+#### spinner.setSelection(int position)
+
+set spinner selection position.
+
+#### spinner.getSpinnerView()
+
+get spinner in the view.
+
+#### spinner.getTitleView()
+
+get title in the view.
+
 ## License
 
 MIT

@@ -38,6 +38,12 @@
         android:onClick="addCollection"
         android:text="add collection data" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="resetPosition"
+        android:text="set select position 0" />
+
     <io.canner.easyspinner.SimpleSpinner
         android:id="@+id/simpleSpinner"
         style="@style/spinnerForm"

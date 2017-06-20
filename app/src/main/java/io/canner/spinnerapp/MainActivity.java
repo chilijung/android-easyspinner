@@ -52,4 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
         spinnerTest.addAll(testData);
     }
+
+    public void resetPosition(View view) {
+        spinnerTest.setSelection(0);
+    }
 }

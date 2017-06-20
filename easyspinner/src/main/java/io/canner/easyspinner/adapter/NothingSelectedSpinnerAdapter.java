@@ -149,6 +149,7 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
     @Override
     public boolean areAllItemsEnabled() {
         return false;
+
     }
 
     @Override
